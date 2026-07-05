@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Listes de courses</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="createList()">
+                <ion-icon name="add-outline" slot="start"></ion-icon>
+                Créer
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    @if (lists().length === 0) {
+    <div class="empty-state">
+        <p>Aucune liste de courses. Appuyez sur "Créer" pour commencer !</p>
+    </div>
+    } @else {
+    <ion-list>
+        <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+            @for (list of lists(); track list.id) {
+            <ion-item class="list-item" style="user-select: none;">
+                <ion-label [routerLink]="['/list', list.id]" style="cursor: pointer;" appLongPress (longPress)="renameList(list)">
+                    <h2>{{ list.name }}</h2>
+                    <p>{{ list.items.length > 0 ? list.completedCount + '/' + list.items.length : 'Aucun' }} article{{ list.items.length > 1 ? 's' : '' }}</p>
+                </ion-label>
+
+                <ion-button slot="end" fill="clear" color="danger" (click)="deleteList(list.id, $event)">
+                    <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+                </ion-button>
+
+                <ion-reorder slot="end"></ion-reorder>
+            </ion-item>
+            }
+        </ion-reorder-group>
+    </ion-list>
+    }
+</ion-content>

@@ -1,0 +1,45 @@
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    text-align: center;
+    color: var(--ion-color-step-600);
+    font-size: 1.1rem;
+    gap: 16px;
+}
+
+.add-item-toolbar {
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+}
+
+.add-item-bar {
+    width: 100%;
+}
+
+.scrollable-content {
+    /* Adjust padding to prevent content from being hidden behind the sticky bar */
+    padding-top: 0;
+}
+
+
+.add-item-input {
+    --background: var(--ion-color-step-100);
+    --border-radius: 8px;
+    --padding-start: 12px;
+    border: 1px solid var(--ion-color-step-200);
+    border-radius: 8px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--ion-color-step-400);
+}
+
+.product-item {
+    --padding-start: 8px;
+}

@@ -1,0 +1,13 @@
+.empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    color: var(--ion-color-step-600);
+    font-size: 1.1rem;
+}
+
+.list-item {
+    --padding-start: 8px;
+}

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            @if (currentList()) {
+            {{ currentList()?.name }} {{ progress() }}
+            } @else {
+            Détail de la liste
+            }
+        </ion-title>
+    </ion-toolbar>
+
+    @if (currentList()) {
+    <ion-toolbar class="add-item-toolbar">
+        <div class="add-item-bar">
+            <ion-item lines="none" class="add-item-input">
+                <ion-input placeholder="Nouveau produit..." [value]="newItemName()" (ionInput)="onInputChange($event)"
+                    (keyup.enter)="addItem()"></ion-input>
+                <ion-button slot="end" (click)="addItem()" [disabled]="!newItemName().trim()">
+                    Ajouter
+                </ion-button>
+            </ion-item>
+        </div>
+    </ion-toolbar>
+    }
+</ion-header>
+
+<ion-content class="ion-padding">
+    @if (!currentList()) {
+    <div class="empty-state">
+        <p>Liste de courses introuvable.</p>
+        <ion-button routerLink="/">Retour à l\'accueil</ion-button>
+    </div>
+    } @else {
+    @if (currentList()!.items.length === 0) {
+    <div class="empty-state">
+        <p>Aucun produit dans cette liste. Ajoutez-en un ci-dessus !</p>
+    </div>
+    } @else {
+    <ion-list class="scrollable-content">
+        <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+            @for (item of currentList()!.items; track item.id) {
+            <ion-item class="product-item" style="user-select: none;">
+                <ion-checkbox slot="start" [checked]="item.completed" (ionChange)="toggleItem(item.id)"></ion-checkbox>
+
+                <ion-label [class.completed]="item.completed" style="cursor: pointer;" appLongPress (longPress)="renameItem(item)">
+                    {{ item.name }}
+                </ion-label>
+
+                <ion-button slot="end" fill="clear" color="danger" (click)="deleteItem(item.id, $event)">
+                    <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+                </ion-button>
+
+                <ion-reorder slot="end"></ion-reorder>
+            </ion-item>
+            }
+        </ion-reorder-group>
+    </ion-list>
+    }
+    }
+</ion-content>
