@@ -1,0 +1,91 @@
+{
+  "configVersion": 1,
+  "timestamp": 1783874135685,
+  "index": "/grocery-list/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/grocery-list/chunk-BvcbF8Ef.js",
+        "/grocery-list/chunk-Bvo6a0x-.js",
+        "/grocery-list/chunk-C3PgJsyZ.js",
+        "/grocery-list/chunk-CSZXXjV-.js",
+        "/grocery-list/chunk-CoSf9vkJ.js",
+        "/grocery-list/chunk-CovPtrIA.js",
+        "/grocery-list/chunk-DAK-84dv.js",
+        "/grocery-list/chunk-Dk8V9e-S.js",
+        "/grocery-list/chunk-Mk9UeCkw.js",
+        "/grocery-list/chunk-uikVY90R.js",
+        "/grocery-list/favicon.ico",
+        "/grocery-list/index.html",
+        "/grocery-list/main-H4ROJK2T.js",
+        "/grocery-list/manifest.webmanifest",
+        "/grocery-list/styles-DI5BGN4B.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/grocery-list/apple-touch-icon.png",
+        "/grocery-list/favicon-96x96.png",
+        "/grocery-list/favicon.svg",
+        "/grocery-list/web-app-manifest-192x192.png",
+        "/grocery-list/web-app-manifest-512x512.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/grocery-list/apple-touch-icon.png": "d7151f4486c3b8aed1374a755e3b37989b5f3c83",
+    "/grocery-list/chunk-BvcbF8Ef.js": "2d6ea789b392aa2fd0c3048a21dbb27439ef7b2c",
+    "/grocery-list/chunk-Bvo6a0x-.js": "6a9f87c9ca32d7b9b5169ef3e8897bd139dd8858",
+    "/grocery-list/chunk-C3PgJsyZ.js": "1fc8dfb140e42d584ce9fd331814cd903df2698e",
+    "/grocery-list/chunk-CSZXXjV-.js": "c9fe6cf9b3b351451bbe4b64456b8750965510c8",
+    "/grocery-list/chunk-CoSf9vkJ.js": "31cd9b31adfbf829792c625c180bca1734d1a913",
+    "/grocery-list/chunk-CovPtrIA.js": "dcd7134824b5fe6fc44a011a2e212d646e64aa02",
+    "/grocery-list/chunk-DAK-84dv.js": "a5526636704d16efbae79510881ddaa7931f530e",
+    "/grocery-list/chunk-Dk8V9e-S.js": "578fa4b38a7c115e9bce3124c298060a8cdfcdde",
+    "/grocery-list/chunk-Mk9UeCkw.js": "e405f811bd1ee8551feb8bfa8f77149817793c48",
+    "/grocery-list/chunk-uikVY90R.js": "859c7185bff1b81da9b25c593dd776f71dcb3ba2",
+    "/grocery-list/favicon-96x96.png": "4fed16c53e72fae1e473705c673e6eb940574789",
+    "/grocery-list/favicon.ico": "4137fd8b9880a3b400213451bc73ff22052cc1dc",
+    "/grocery-list/favicon.svg": "58002749a88c909958e3d0fda27dda8eaef9c988",
+    "/grocery-list/index.html": "058f44cf1f8c8642d2c6c74a038937d4aa7205ce",
+    "/grocery-list/main-H4ROJK2T.js": "b924ef4a030dbf3897fed1258d9ee3ba6b23d34e",
+    "/grocery-list/manifest.webmanifest": "444357bd62dce924d1d02d9b85eed02f8e774d26",
+    "/grocery-list/styles-DI5BGN4B.css": "22665e83f9e885785b470d6a3f2c110e6fe3a04e",
+    "/grocery-list/web-app-manifest-192x192.png": "698a064933badb8da771b234600e186e425b0b32",
+    "/grocery-list/web-app-manifest-512x512.png": "7baf3a957cd788d3b20b40e1abbde74c77142ced"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
