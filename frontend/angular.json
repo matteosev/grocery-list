@@ -78,7 +78,8 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/grocery-list/"
+              "baseHref": "/grocery-list/",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
