@@ -2,6 +2,7 @@ import { Component, inject, input, signal, computed, viewChild } from '@angular/
 import { RouterLink } from '@angular/router';
 import {
     IonHeader,
+    IonFooter,
     IonToolbar,
     IonTitle,
     IonContent,
@@ -19,31 +20,32 @@ import {
     AlertController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { closeOutline, chevronBackOutline } from 'ionicons/icons';
+import { closeOutline, chevronBackOutline, addOutline } from 'ionicons/icons';
 import { GroceryService, GroceryItem } from '../../core/services/grocery.service';
 import { LongPressDirective } from '../../shared/directives/long-press.directive';
 
 @Component({
     selector: 'app-detail-page',
     imports: [
-        RouterLink,
-        IonHeader,
-        IonToolbar,
-        IonTitle,
-        IonContent,
-        IonList,
-        IonItem,
-        IonLabel,
-        IonButton,
-        IonIcon,
-        IonReorderGroup,
-        IonReorder,
-        IonButtons,
-        IonBackButton,
-        IonCheckbox,
-        IonInput,
-        LongPressDirective
-    ],
+    RouterLink,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonButton,
+    IonIcon,
+    IonReorderGroup,
+    IonReorder,
+    IonButtons,
+    IonBackButton,
+    IonCheckbox,
+    IonInput,
+    LongPressDirective,
+    IonFooter
+],
     templateUrl: "./detail-page.component.html",
     styleUrl: "./detail-page.component.css"
 })
@@ -70,7 +72,7 @@ export class DetailPageComponent {
     });
 
     constructor() {
-        addIcons({ closeOutline, chevronBackOutline });
+        addIcons({ closeOutline, chevronBackOutline, addOutline });
     }
 
     onInputChange(event: any) {

@@ -11,20 +11,6 @@
             }
         </ion-title>
     </ion-toolbar>
-
-    @if (currentList()) {
-    <ion-toolbar class="add-item-toolbar">
-        <div class="add-item-bar">
-            <ion-item lines="none" class="add-item-input">
-                <ion-input placeholder="Nouveau produit..." [value]="newItemName()" (ionInput)="onInputChange($event)"
-                    (keyup.enter)="addItem()"></ion-input>
-                <ion-button slot="end" (click)="addItem()" [disabled]="!newItemName().trim()">
-                    Ajouter
-                </ion-button>
-            </ion-item>
-        </div>
-    </ion-toolbar>
-    }
 </ion-header>
 
 <ion-content class="ion-padding">
@@ -45,7 +31,8 @@
             <ion-item class="product-item" style="user-select: none;">
                 <ion-checkbox slot="start" [checked]="item.completed" (ionChange)="toggleItem(item.id)"></ion-checkbox>
 
-                <ion-label [class.completed]="item.completed" style="cursor: pointer;" appLongPress (longPress)="renameItem(item)">
+                <ion-label [class.completed]="item.completed" style="cursor: pointer;" appLongPress
+                    (longPress)="renameItem(item)">
                     {{ item.name }}
                 </ion-label>
 
@@ -61,3 +48,22 @@
     }
     }
 </ion-content>
+
+<ion-footer>
+    @if (currentList()) {
+    <ion-toolbar class="add-item-toolbar">
+        <div class="add-item-bar">
+            <ion-item lines="none" class="add-item-input">
+                <ion-input placeholder="Nouvel article..." [value]="newItemName()" (ionInput)="onInputChange($event)"
+                    (keyup.enter)="addItem()"></ion-input>
+                <ion-buttons>
+                    <ion-button slot="end" size="default" (click)="addItem()" [disabled]="!newItemName().trim()"
+                        aria-label="Ajouter un article">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-item>
+        </div>
+    </ion-toolbar>
+    }
+</ion-footer>
